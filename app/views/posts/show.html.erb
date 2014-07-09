@@ -1,0 +1,7 @@
+<h2><%= @post.title %></h2>
+<%= @post.article %><br>
+<%= @post.date %><br>
+<%= @post.user.first_name%> <%= @post.user.last_name %><br><br>
+
+<%= link_to 'Edit Post', edit_post_path%> |
+<%= link_to 'Back to Posts', posts_path %>

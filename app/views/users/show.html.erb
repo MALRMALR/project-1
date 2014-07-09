@@ -1,0 +1,9 @@
+<h2>Posts by: <%= @user.first_name %> <%= @user.last_name %>(<%= @user.username %>)</h2>
+<hr>
+<% @user.posts.each do |post| %>
+<h3><%= link_to(post.title, post_path(post))%></h3><br>
+Article: <%= post.article %><br>
+Date: <%= post.date %><br>
+
+<hr>
+<% end %>

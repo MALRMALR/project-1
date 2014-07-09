@@ -1,0 +1,17 @@
+<p>ID: <%= user.id %></p>
+<p>Username: <%= link_to(user.username, user_path(user)) %></p>
+<p>First Name: <%= user.first_name %></p>
+<p>Last Name: <%= user.last_name %></p>
+<p>Discipline: <%= user.discipline %></p>
+<p>Description: <%= user.artist_statement %></p>
+<p>Location: <%= user.location %></p>
+<p>Contact: <%= user.contact_info%></p>
+<p>Instagram: <%= user.instagram %></p>
+<p>Facebook: <%= user.facebook %></p>
+<p>Twitter: <%= user.twitter %></p>
+<p>Website: <%= user.website %></p>
+<% if session[:current_user] == user.id %><br>
+<%= link_to('Remove', user_path(user), method: :delete, confirm: "Are you sure?") %> |
+<%= link_to('Edit Profile', edit_user_path(user)) %>
+<% end %>
+<hr>

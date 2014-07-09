@@ -1,0 +1,30 @@
+<ul>
+  <% @post.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+
+<%= form_for(@post) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+
+  <%= f.label :article %>
+  <%= f.text_area :article %>
+  <br>
+
+  <%= f.label :date %>
+  <%= f.text_field :date %>
+  <br>
+
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+  <br>
+
+  <%= f.label :banner %>
+  <%= f.file_field :banner %>
+  <br>
+
+  <%= f.submit %>
+
+<% end %>

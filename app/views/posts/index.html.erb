@@ -1,0 +1,10 @@
+<h2>All Posts</h2>
+
+<%= link_to('New Post', new_post_path) %>
+
+<hr>
+
+<% @posts.each do |current_post| %>
+
+<%= render partial: 'home', locals: { post: current_post } %>
+<% end %>

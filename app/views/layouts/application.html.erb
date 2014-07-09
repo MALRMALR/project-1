@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Radiation</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <h1>Project 1</h1>
+  <% if session[:current_user] %>
+    <p>
+      Welcome Back!, <%= User.find(session[:current_user]).first_name %>! |
+      <%= link_to('Log Out', logout_path) %>
+    </p>
+  <% end %>
+  <nav>
+    <%= link_to('Home', root_path) %> |
+    <%= link_to('Contributors', users_path) %> |
+    <%= link_to('Posts', posts_path) %> |
+    <%= link_to('Login', login_path) %>
+
+<%= yield %>
+
+</body>
+</html>

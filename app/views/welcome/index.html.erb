@@ -1,0 +1,10 @@
+<h4>An online arts magazine dedicated to sharing and distributing creative media that features original work from a diverse community.<br>
+  An open platform for artistic and creative dialogue aiming to capture creative expression, encourage discourse and inspire collaboration.
+</h4>
+
+<%= link_to 'View Our Contributors', users_path %><br>
+<br>
+
+<h4>Featured Post</h4>
+
+<%= render partial: 'posts/home', locals: {post: @random_post} %>
