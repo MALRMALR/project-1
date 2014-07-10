@@ -7,6 +7,8 @@ class CreateTags < ActiveRecord::Migration
       t.string :literature
       t.string :news
       t.string :fashion
+
+      t.references :posts
     end
   end
 end

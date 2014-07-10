@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :authorize, only: [:edit, :update, :destroy]
 
   def index
-    @users = User.all.shuffle
+    @users = User.all
   end
 
   def new
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to users_path
+      redirect_to @user, notice: 'User was successfully created.'
     else
       render :new
     end
@@ -55,6 +55,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :first_name, :last_name, :password,
     :password_confirmation, :discipline, :artist_statement, :location, :contact_info,
-    :instagram, :facebook, :twitter, :website)
+    :instagram, :facebook, :twitter, :website, :avatar)
   end
 end

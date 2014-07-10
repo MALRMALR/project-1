@@ -45,3 +45,5 @@ group :development, :test do
   gem 'rspec-collection_matchers'
   gem 'shoulda-matchers', require: false
 end
+
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"

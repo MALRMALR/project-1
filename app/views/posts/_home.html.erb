@@ -1,3 +1,5 @@
-<%= link_to(post.title, post_path(post))%><small> by: <%= link_to( post.user.username, user_path( post )) %></small>
+<%= link_to(post.title, post_path(post))%><small> by: <%= link_to( post.user.username, user_path( post.user )) %></small>
 <p><%= post.article %></p>
+<%= post.date %>
+<%= image_tag post.attachment.url(:medium) %>
 <hr>

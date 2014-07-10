@@ -1,9 +1,10 @@
 <h2>Users</h2>
-
+<% unless session[:current_user] %>
 <%= link_to 'Sign Up', new_user_path %>
+<% end %>
 
-<% @users.each do |user| %>
+<% @users.each do |current_user| %>
 
-<%= render partial: 'users', locals: {user: user} %>
+<%= render partial: 'users', locals: {user: current_user} %>
 
 <% end %>

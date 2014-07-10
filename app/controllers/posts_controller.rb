@@ -26,12 +26,14 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    redirect_to posts_path unless session[:current_user] == @post.user_id
   end
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(post_params)
-      redirect_to(post_path(@post))
+    if @post.user_id == session[:current_user]
+        @post.update(post_params)
+        redirect_to(post_path(@post))
     else
       render :edit
     end
@@ -45,6 +47,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :article, :date, :banner, :category)
+    params.require(:post).permit(:title, :article, :date, :category, :attachment, :embed_link)
   end
 end

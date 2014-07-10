@@ -1,9 +1,9 @@
-<h2>Posts by: <%= @user.first_name %> <%= @user.last_name %>(<%= @user.username %>)</h2>
-<hr>
+<h3>Posts by: <%= @user.first_name %> <%= @user.last_name %>(<%= @user.username %>)<%= image_tag @user.avatar.url(:thumb) %></h3>
+<p><%= @user.artist_statement %> | <%= @user.location %> | <%= @user.website %></p>
 <% @user.posts.each do |post| %>
 <h3><%= link_to(post.title, post_path(post))%></h3><br>
 Article: <%= post.article %><br>
 Date: <%= post.date %><br>
-
+<%= image_tag post.attachment.url(:thumb) %>
 <hr>
 <% end %>

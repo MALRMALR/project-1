@@ -10,16 +10,18 @@
     <h1>Project 1</h1>
   <% if session[:current_user] %>
     <p>
-      Welcome Back!, <%= User.find(session[:current_user]).first_name %>! |
+      Welcome Back, <%= User.find(session[:current_user]).username %>! |
       <%= link_to('Log Out', logout_path) %>
     </p>
   <% end %>
   <nav>
     <%= link_to('Home', root_path) %> |
     <%= link_to('Contributors', users_path) %> |
-    <%= link_to('Posts', posts_path) %> |
-    <%= link_to('Login', login_path) %>
-
+    <%= link_to('Posts', posts_path) %>
+    <% unless session[:current_user] %>
+    | <%= link_to('Login', login_path) %>
+    <% end %>
+  </nav>
 <%= yield %>
 
 </body>

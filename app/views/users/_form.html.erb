@@ -7,53 +7,45 @@
 <%= form_for(@user) do |f| %>
   <%= f.label :username %>
   <%= f.text_field :username %>
-  <br>
+
   <%= f.label :first_name %>
   <%= f.text_field :first_name %>
-  <br>
+
   <%= f.label :last_name %>
   <%= f.text_field :last_name %>
-  <br>
 
   <%= f.label :discipline %>
   <%= f.text_field :discipline %>
-  <br>
 
   <%= f.label :artist_statement %>
   <%= f.text_field :artist_statement %>
-  <br>
 
   <%= f.label :location %>
   <%= f.text_field :location %>
-  <br>
 
   <%= f.label :contact_info %>
   <%= f.text_field :contact_info %>
-  <br>
 
   <%= f.label :instagram %>
   <%= f.text_field :instagram %>
-  <br>
 
   <%= f.label :facebook %>
   <%= f.text_field :facebook %>
-  <br>
 
   <%= f.label :twitter %>
   <%= f.text_field :twitter %>
-  <br>
 
   <%= f.label :website %>
   <%= f.text_field :website %>
-  <br>
 
   <%= f.label :password %>
   <%= f.password_field :password %>
-  <br>
 
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
-  <br>
 
-<%= f.submit %>
+  <%= f.file_field :avatar %>
+
+  <%= f.submit %>
+
 <% end %>
