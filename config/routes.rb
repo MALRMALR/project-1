@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :comments
+
   root to: 'welcome#index'
 
   # Sessions
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
   resources :users
-  resources :posts
-  resources :tags
+  resources :posts do
+    resources :comments
+  end
 end

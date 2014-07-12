@@ -4,12 +4,8 @@
 <% else %>
 <%= link_to 'Sign Up', new_user_path %>
 <% end %>
-
-
-
 <hr>
-
 <% @posts.each do |current_post| %>
-
-<%= render partial: 'home', locals: { post: current_post } %>
+<%= render partial: 'home', locals: { post: current_post } %><br>
+<%= render partial: 'embed', locals: { post: current_post } %>
 <% end %>

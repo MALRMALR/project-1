@@ -1,3 +1,4 @@
+<p><%= image_tag user.avatar.url(:thumb) %></p>
 <p>ID: <%= user.id %></p>
 <p>Username: <%= link_to(user.username, user_path(user)) %></p>
 <p>First Name: <%= user.first_name %></p>
@@ -11,7 +12,7 @@
 <p>Twitter: <%= user.twitter %></p>
 <p>Website: <%= user.website %></p>
 <% if session[:current_user] == user.id %><br>
-<%= link_to('Remove', user_path(user), method: :delete) %> |
+<%= link_to('Remove', user_path(user), method: :delete, data: { confirm: "Are you sure?" } ) %> |
 <%= link_to('Edit Profile', edit_user_path(user)) %>
 <% end %>
 <hr>

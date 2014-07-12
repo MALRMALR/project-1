@@ -13,3 +13,83 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: 40px;
+}
+
+h1, h2, h3, h4, p, nav, a, small  {
+  font-family: "Gill Sans", sans-sarif;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+hr {
+  opacity: 0.5;
+}
+
+nav {
+  text-align: center;
+}
+
+h1 {
+  text-shadow: 3px 3px #8AFFFF;
+  font-size: 50px;
+  text-align: center;
+  letter-spacing: 10px;
+}
+
+h2, h3, h4, h5, h6 {
+  text-shadow: 3px 3px #8AFFFF;
+}
+
+h4 {
+  text-shadow: inherit;
+  margin: 50px 10px 10px 10px;
+}
+
+small, p, h4 {
+  text-transform: none;
+
+}
+
+ul {
+  list-style-type: circle;
+}
+
+li {
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+a:hover {
+  color: #ff0000;
+  text-shadow: 1px 1px #8AFFFF;
+  text-decoration: underline;
+}
+
+a:visited {
+  text-shadow: 3px 3px #8AFFFF;
+}
+
+div#welcome {
+  text-align: right;
+  position: relative;
+  margin:
+}
+
+div#about_content{
+  text-align: center;
+  font-family: "Gill Sans", sans-sarif;
+  margin: 30px 10px 40px 10px;
+  border-bottom: 1px #8AFFFF dotted;
+}
+
+
+nav {
+  font-size: 20px;
+}

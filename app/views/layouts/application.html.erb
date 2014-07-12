@@ -7,17 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <h1>Project 1</h1>
+    <h1><%= link_to('The Radiation', root_path) %></h1>
+<div id="welcome">
   <% if session[:current_user] %>
     <p>
       Welcome Back, <%= User.find(session[:current_user]).username %>! |
       <%= link_to('Log Out', logout_path) %>
     </p>
   <% end %>
+</div>
   <nav>
     <%= link_to('Home', root_path) %> |
     <%= link_to('Contributors', users_path) %> |
-    <%= link_to('Posts', posts_path) %>
+    <%= link_to('Our Work', posts_path) %>
     <% unless session[:current_user] %>
     | <%= link_to('Login', login_path) %>
     <% end %>

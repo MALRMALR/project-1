@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :authenticate, only: [:new, :create]
-
+  
   def index
     @posts = Post.all
   end
@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = session[:current_user]
+    @post.strip_link
     if @post.save
       redirect_to(posts_path)
     else
@@ -33,6 +34,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.user_id == session[:current_user]
         @post.update(post_params)
+        @post.strip_link
+        @post.save
         redirect_to(post_path(@post))
     else
       render :edit

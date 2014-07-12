@@ -1,0 +1,8 @@
+<div>
+  <h2><%= comment.title %></h2>
+  <p>Added by <strong><%= comment.author %></strong> on
+    <%= l(comment.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
+  <blockquote>
+    <p><%= comment.body %></p>
+  </blockquote>
+</div>
