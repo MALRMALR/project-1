@@ -2,10 +2,8 @@
   An open platform for artistic and creative dialogue aiming to capture creative expression, encourage discourse and inspire collaboration.
 </h4></div>
 
-<%= link_to 'View Our Contributors', users_path %><br>
-<br>
+<%= link_to 'View Our Contributors', users_path %>
 
-<h4>Featured Post</h4>
 
 <%= render partial: 'posts/home', locals: { post: @random_post } %>
 <%= render partial: 'posts/embed', locals: { post: @random_post } %>
