@@ -48,5 +48,3 @@ group :development, :test do
 end
 
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-
-gem "rake", "!= 0.9.0"
