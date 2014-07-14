@@ -157,6 +157,7 @@ div#login_page {
 
 div.post_info {
   margin: 0 0 30px 10px;
+  text-align: center;
 }
 div.post_navigation {
   margin: 15px 0;
