@@ -3,49 +3,62 @@
   <li><%= msg %></li>
   <% end %>
 </ul>
-
+<div>
 <%= form_for(@user) do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+  <h3>Required Information:</h3>
+  <p>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
 
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <hr class="hr_style">
+  <h3>Optional Information</h3>
+  <p>
+    <%= f.label :discipline %>
+    <%= f.text_field :discipline %>
 
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
+    <%= f.label :artist_statement %>
+    <%= f.text_field :artist_statement %>
 
-  <%= f.label :discipline %>
-  <%= f.text_field :discipline %>
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+  </p>
+  <p>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
 
-  <%= f.label :artist_statement %>
-  <%= f.text_field :artist_statement %>
+    <%= f.label :contact_info %>
+    <%= f.text_field :contact_info %>
+  </p>
+  <p>
+    <%= f.label :instagram %>
+    <%= f.text_field :instagram %>
 
-  <%= f.label :location %>
-  <%= f.text_field :location %>
+    <%= f.label :facebook %>
+    <%= f.text_field :facebook %>
 
-  <%= f.label :contact_info %>
-  <%= f.text_field :contact_info %>
-
-  <%= f.label :instagram %>
-  <%= f.text_field :instagram %>
-
-  <%= f.label :facebook %>
-  <%= f.text_field :facebook %>
-
-  <%= f.label :twitter %>
-  <%= f.text_field :twitter %>
-
-  <%= f.label :website %>
-  <%= f.text_field :website %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-
-  <%= f.file_field :avatar %>
-
-  <%= f.submit %>
-
+    <%= f.label :twitter %>
+    <%= f.text_field :twitter %>
+  </p>
+  <p>
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+  </p>
+  <hr class="hr_style">
+  <p class="button">
+    <%= f.submit %>
+  <p>
 <% end %>
+</div>

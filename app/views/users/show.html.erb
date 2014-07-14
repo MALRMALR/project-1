@@ -1,10 +1,19 @@
+<h2><%= @user.username %></h2>
+<!-- <%= render 'follow_form' %>
+
+<%= render 'shared/stats' %> -->
 <h3>Posts by: <%= @user.first_name %> <%= @user.last_name %>(<%= @user.username %>)<%= image_tag @user.avatar.url(:thumb) %></h3>
-<p><%= @user.artist_statement %> | <%= @user.location %> | <%= @user.website %></p>
+<p><%= @user.artist_statement %> <%= @user.location %> <%= @user.website %></p>
+
 <% @user.posts.each do |post| %>
+<div class="post_content">
 <h3><%= link_to(post.title, post_path(post))%></h3><br>
-Article: <%= post.article %><br>
-Date: <%= post.date %><br>
-<%= image_tag post.attachment.url(:thumb) %>
-<%= render partial: 'posts/embed', locals: { post: @post } %>
-<hr>
+<% if post.attachment.present? %>
+<%= image_tag post.attachment.url(:medium) %>
 <% end %>
+<%= render partial: 'posts/embed', locals: { post: post } %>
+<p><%= post.article %></p>
+<p> <%= post.date %></p>
+<hr class="hr_style">
+<% end %>
+</div>

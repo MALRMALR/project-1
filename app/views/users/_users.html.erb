@@ -1,18 +1,28 @@
-<p><%= image_tag user.avatar.url(:thumb) %></p>
+<% if user.avatar.present? %>
+<%= image_tag user.avatar.url(:thumb) %>
+<% end %>
+<div id="users_page">
+<div class="user_index"><p>Username: <%= link_to(user.username, user_path(user)) %></p></div>
+<div class="user_index"><p>Name: <%= user.first_name %> <%= user.last_name %></p></div>
+<!-- <div class="user_index"><p>Location: <%= user.location %></p></div> -->
 <p>ID: <%= user.id %></p>
-<p>Username: <%= link_to(user.username, user_path(user)) %></p>
-<p>First Name: <%= user.first_name %></p>
-<p>Last Name: <%= user.last_name %></p>
-<p>Discipline: <%= user.discipline %></p>
+<!-- <p>Discipline: <%= user.discipline %></p>
 <p>Description: <%= user.artist_statement %></p>
-<p>Location: <%= user.location %></p>
 <p>Contact: <%= user.contact_info%></p>
 <p>Instagram: <%= user.instagram %></p>
 <p>Facebook: <%= user.facebook %></p>
 <p>Twitter: <%= user.twitter %></p>
-<p>Website: <%= user.website %></p>
+<p>Website: <%= user.website %></p> -->
 <% if session[:current_user] == user.id %><br>
-<%= link_to('Remove', user_path(user), method: :delete, data: { confirm: "Are you sure?" } ) %> |
-<%= link_to('Edit Profile', edit_user_path(user)) %>
+
+  <div id="user_navigation">
+    <%= link_to('Edit Profile', edit_user_path(user)) %>
+  </div>
+
+  <div id="user_navigation">
+    <%= link_to('Delete Account', user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete your account?" }) %>
+  </div>
+
 <% end %>
-<hr>
+<hr class="hr_style">
+</div>

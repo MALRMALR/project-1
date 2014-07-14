@@ -7,23 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <h1><%= link_to('The Radiation', root_path) %></h1>
-<div id="welcome">
-  <% if session[:current_user] %>
-    <p>
-      Welcome Back, <%= User.find(session[:current_user]).username %>! |
-      <%= link_to('Log Out', logout_path) %>
-    </p>
-  <% end %>
-</div>
+    <h1 class="banner"><%= link_to('The Radiation', root_path) %></h1>
+<div class="welcome">
   <nav>
-    <%= link_to('Home', root_path) %> |
-    <%= link_to('Contributors', users_path) %> |
-    <%= link_to('Our Work', posts_path) %>
-    <% unless session[:current_user] %>
-    | <%= link_to('Login', login_path) %>
-    <% end %>
+    <span class="main_menu"><%= link_to('Contributors', users_path) %></span>
+    <span class="separator">//</span>
+    <span class="main_menu"><%= link_to('Our Work', posts_path) %></span>
+      <% unless session[:current_user] %>
+        <span class="separator">//</span><span id="login_button"><%= link_to('Login', login_path) %></span>
+          <span class="separator">//</span><span id="login_button"><%= link_to('Sign Up', new_user_path) %></span>
+      <% end %>
   </nav>
+
+  <% if session[:current_user] %>
+    <div id="login_box">
+      Welcome Back, <%= User.find(session[:current_user]).username %> ! <span class="separator">//</span>
+      <span class="logout"><%= link_to('Log Out', logout_path) %></span>
+    </div>
+  <% end %>
+
+</div>
+
 <%= yield %>
 
 </body>

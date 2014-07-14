@@ -20,12 +20,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:id])  
   end
 
 
   def edit
-    if session [:current_user] == params[:id].to_i
+    if session[:current_user] == params[:id].to_i
       @user = User.find(params[:id])
     else
       redirect_to users_path
@@ -48,6 +48,32 @@ class UsersController < ApplicationController
     @user.destroy
     session[:current_user] = nil
     redirect_to users_path
+  end
+
+  def following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.followed_users
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers
+    render 'show_follow'
+  end
+
+  def following?(other_user)
+    relationships.find_by(followed_id: other_user.id)
+  end
+
+  def follow!(other_user)
+    relationships.create!(followed_id: other_user.id)
+  end
+
+  def unfollow!(other_user)
+    relationships.find_by(followed_id: other_user.id).destroy
   end
 
   private

@@ -1,9 +1,8 @@
-<div id="about_content"><h4>An online arts magazine dedicated to sharing and distributing creative media that features original work from a diverse community.<br>
-  An open platform for artistic and creative dialogue aiming to capture creative expression, encourage discourse and inspire collaboration.
-</h4></div>
-
-<%= link_to 'View Our Contributors', users_path %>
-
-
+<div class="about_content">
+  <h4>
+    An online arts magazine dedicated to sharing and distributing creative media that features original work from a diverse community.<br>
+    An open platform for artistic and creative dialogue aiming to capture creative expression, encourage discourse and inspire collaboration.
+  </h4>
+</div>
 <%= render partial: 'posts/home', locals: { post: @random_post } %>
 <%= render partial: 'posts/embed', locals: { post: @random_post } %>

@@ -1,9 +1,11 @@
-<hr>
-<%= link_to(post.title, post_path( post ))%>
-<small> by: <%= link_to( post.user.username, user_path( post.user )) %></small>
+<div class="post_info">
+<%= link_to( post.title, post_path( post ))%>
+<small><span class="separator">by</span> <span class="username_feed"><%= link_to( post.user.username, user_path( post.user )) %></span>  <span class="separator">//</span>  <span class="post_date"> <%= post.date %></span></small>
+</div>
 
-<p><%= post.article %></p>
-<p><%= post.date %></p>
-<% if post.attachment.url %>
-<%= image_tag post.attachment.url(:medium) %>
-<% end %>
+<div id="attachment" class="post_content">
+<% if post.attachment.present? %>
+  <%= image_tag post.attachment.url(:medium) %>
+<% end %><br>
+<%= post.article %>
+</div>

@@ -1,8 +1,5 @@
 <%= form_for [@post, @post.comments.build] do |f| %>
-    <p>
-    <%= f.label :author %>
-    <%= f.text_field :author %>
-      </p>
+    <%= f.hidden_field :user_id, value: @post.user.id %>
     <p>
     <%= f.label :body %>
     <%= f.text_area :body %>

@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :authenticate, only: [:new, :create]
-  
+
   def index
     @posts = Post.all
   end
@@ -52,4 +52,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :article, :date, :category, :attachment, :embed_link)
   end
+
 end
