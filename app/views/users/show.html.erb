@@ -1,7 +1,6 @@
 <%= image_tag @user.avatar.url(:thumb) %>
 <span class="title">Posts by: <%= @user.first_name %> <%= @user.last_name %> <span class="separator">//</span> <span class="username_feed"><%= link_to( @user.username, user_path( @user )) %></span></span>
 <p><%= @user.artist_statement %> <%= @user.location %> <%= @user.website %></p>
-
 <div class="about_content">
 
 <% @user.posts.each do |post| %>
