@@ -1,4 +1,3 @@
-require_relative '20140711151211_create_comments'
 class FixCommentMigration < ActiveRecord::Migration
   def change
     revert CreateComments
