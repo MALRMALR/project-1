@@ -1,10 +1,10 @@
-class FixCommentMigration < ActiveRecord::Migration
+class CreateComments < ActiveRecord::Migration
   def change
-    revert CreateComments
-
     create_table(:comments) do |t|
       t.string :title
       t.string :body
+      t.belongs_to :user
+      
       t.timestamps
     end
   end
