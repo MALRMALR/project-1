@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 require 'rspec/collection_matchers'
 
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.2'
 # Use postgresql as the database for Active Record
@@ -40,8 +41,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'pry-rails'
 
-gem 'faker'
-
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'rspec-collection_matchers'
@@ -49,3 +48,5 @@ group :development, :test do
 end
 
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
+gem "rake", "!= 0.9.0"
