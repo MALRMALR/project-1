@@ -8,22 +8,15 @@ class Post < ActiveRecord::Base
   validates :title, :date, presence: true
 
   def strip_link
-    link = self.embed_link # sets variable link equal to embed link paramater of an instance of the class Post
+    link = self.embed_link
     if link.include? 'youtube'
-      self.embed_link = link.scan(/=\p{Alnum}*/).first # this sets embed_link parameter of instance of Post class to the last 10 digits of the link
-      self.embed_link = self.embed_link.gsub(/[=]/, '')
+      self.embed_link = link.scan(/=\p{Alnum}*/).first.gsub(/[=]/, '')
     elsif link.include? 'vimeo'
-      self.embed_link = link.scan(/m\/\p{N}*/).first
-      self.embed_link = self.embed_link.gsub(/[m\/\/]/, '')
-
+      self.embed_link = link.scan(/m\/\p{N}*/).first.gsub(/[m\/\/]/, '')
     elsif link.include? 'tracks'
-
-     self.embed_link = link.scan(/tracks\/\d{1,}/).first # Reg Exp scans embed link for 'tracks'/then all numbers', calls .first method on link variable and returns first colelction of characters (from a string) that meets this specification
-
+     self.embed_link = link.scan(/tracks\/\d{1,}/).first
     elsif link.include? 'playlists'
-
      self.embed_link = link.scan(/playlists\/\d{1,}/).first
-
     end
     return link
   end

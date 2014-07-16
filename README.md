@@ -21,13 +21,13 @@ players as well as attach photos to individual posts.
 
 Current list of supported embed links:
 
-Soundcloud iframe embed links for individual tracks
+Soundcloud iframe embed links
 Youtube video URLS
-Vimeo iframe embed links
+Vimeo video URLS
 
 In the future I would like to add a calendar for events, a Instagram feed from
-members, support for multiple attachments and embed links, grid based css framework,
-javascript integration, and a more robust content management system.  
+members, support for multiple attachments, grid based css framework,
+javascript integration, and a more robust / rich text content management system.  
 
 Trello user stories board: https://trello.com/b/2wM2elWF/wdi-project-1
 
