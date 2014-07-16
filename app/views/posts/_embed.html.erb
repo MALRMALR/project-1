@@ -1,8 +1,8 @@
 <% if post.embed_link.present? %>
-  <% if post.embed_link && post.embed_link.length == 11 %>
+  <% if post.embed_link && post.embed_link.include?("youtube") %>
     <div class="embed_frame"><iframe width="800" height="450" src="//www.youtube.com/embed/<%= post.embed_link %>"frameborder="0" allowfullscreen></iframe></div>
 
-  <% elsif post.embed_link && post.embed_link.length == 9 %>
+  <% elsif post.embed_link && post.embed_link.include?("vimeo")%>
 
     <div class="embed_frame"><iframe src="//player.vimeo.com/video/<%= post.embed_link %>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff963" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
 
