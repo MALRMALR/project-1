@@ -1,14 +1,17 @@
+<!-- Title Content -->
 <div class="about_content">
   <span class="title"><%= @post.title %></span>
   <small><span class="separator">by</span> <span class="username_feed"><%= link_to( @post.user.username, user_path( @post.user )) %></span>  <span class="separator">//</span>  <span class="post_date"><%= @post.date %></span>
 </div>
 
+<!-- Photo Attachment -->
 <% if @post.attachment.present? %>
   <div class="post_content">
     <%= image_tag @post.attachment.url(:medium)%>
   </div>
 <% end %>
 
+<!-- Embed Partial -->
 <%= render partial: 'embed', locals: { post: @post } %>
 
 <div class="post_content"><%= @post.article %></div>
@@ -16,6 +19,7 @@
     <div class="post_content">category: <%= @post.category %></div>
   <% end %>
 
+<!-- Post Options / Nav -->
 <div class="post_navigation">
   <%= link_to 'Back to Posts', posts_path %>
     <% if session[:current_user] == @post.user.id %>
@@ -25,6 +29,7 @@
     <% end %>
 </div>
 
+<!-- Comments -->
 <% unless @post.comments == nil %>
   <h3>Comments</h3>
   <% @post.comments.each do |comment| %>

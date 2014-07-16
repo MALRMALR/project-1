@@ -32,9 +32,9 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.user_id == session[:current_user]
-        @post.update(post_params)
-        @post.strip_link
+    if @post.user_id == session[:current_user] #if you authored the post
+        @post.update(post_params) # save with post paramaters
+        @post.strip_link # calls strip_link method on @post instance variable
         @post.save
         redirect_to(post_path(@post))
     else
