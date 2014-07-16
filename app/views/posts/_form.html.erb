@@ -5,28 +5,31 @@
 </ul>
 
 <%= form_for(@post) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :article %>
+    <%= f.text_area :article %>
+  </p>
+  <p>
+    <%= f.label :date %>
+    <%= f.date_select :date %>
+  </p>
+  <p>
+    <%= f.label :category %>
+    <%= f.text_field :category %>
+  </p>
+  <p>
+    <%= f.label :embed_link %>
+    <%= f.text_field :embed_link %>
+  </p>
+  <p>
+    <%= f.label :attachment %>
+    <%= f.file_field :attachment %>
+  </p>
 
-  <%= f.label :article %>
-  <%= f.text_area :article %>
-  <br>
-
-  <%= f.label :date %>
-  <%= f.date_select :date %>
-  <br>
-
-  <%= f.label :category %>
-  <%= f.text_field :category %>
-  <br>
-
-  <%= f.label :embed_link %>
-  <%= f.text_field :embed_link %>
-
-  <%= f.label :attachment %>
-  <%= f.file_field :attachment %>
-
-  <%= f.submit %>
+  <p><%= f.submit %></p>
 
 <% end %>
