@@ -88,7 +88,7 @@ hr.hr_style {
 }
 
 hr.hr_style:after {
-  content: "∞";
+  content: "§";
   display: inline-block;
   position: relative;
   top: -0.7em;
@@ -178,10 +178,6 @@ div.embed_frame {
 
 div.article {
   margin: 0 20px;
-}
-
-input {
-  padding: 10px;
 }
 
 span.post_date {
