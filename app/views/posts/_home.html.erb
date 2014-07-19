@@ -1,6 +1,6 @@
 <div class="post_info">
 <%= link_to( post.title, post_path( post ))%>
-<small><span class="separator">by</span> <span class="username_feed"><%= link_to( post.user.username, user_path( post.user )) %></span>  <span class="separator">//</span>  <span class="post_date"> <%= post.date %></span></small>
+<small><span class="separator">by </span> <span class="username_feed"><%= link_to( post.user.username, user_path( post.user )) %></span>  <span class="separator">//</span>  <span class="post_date"> <%= post.date %></span></small>
 </div>
 
 <div id="attachment" class="post_content">
