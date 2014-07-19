@@ -177,6 +177,12 @@ div.article {
   margin: 0 20px;
 }
 
+div.show_user_content {
+  font-family: inherit;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 0;
+  border-bottom: 1px #8AFFFF dotted;
+}
 span.post_date {
   display: inline;
   font-size: 12px;
@@ -230,7 +236,7 @@ span.main_menu {
 
 div.post_content {
   text-align: center;
-  margin: 0 20px;
+  margin: 20px 20px;
 }
 
 /*div#header_image {
