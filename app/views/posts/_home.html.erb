@@ -4,8 +4,13 @@
 </div>
 
 <div id="attachment" class="post_content">
+
 <% if post.attachment.present? %>
-  <%= image_tag post.attachment.url(:medium) %>
+<div class="containingBlock">
+  <div class="embed_frame">
+    <%= image_tag post.attachment.url(:medium) %>
+</div>
+</div>
 <% end %><br>
 <%= post.article %>
 </div>
