@@ -11,7 +11,12 @@
     <span class="separator">//</span>  <span class="post_date"><%= post.date %></span>
   </div>
     <% if post.attachment.present? %>
-      <%= image_tag post.attachment.url(:medium) %>
+
+    <div class="containingBlock">
+
+      <div class="embed_frame"><%= image_tag post.attachment.url(:medium) %></div>
+
+    </div>
     <% end %>
       <%= render partial: 'posts/embed', locals: { post: post } %>
       <p><%= post.article %></p>

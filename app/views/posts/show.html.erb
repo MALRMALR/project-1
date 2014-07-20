@@ -6,8 +6,10 @@
 
 <!-- Photo Attachment -->
 <% if @post.attachment.present? %>
-  <div class="post_content">
-    <%= image_tag @post.attachment.url(:medium)%>
+  <div class="containingBlock">
+    <div class="post_content">
+      <div class="embed_frame"><%= image_tag @post.attachment.url(:medium)%></div>
+    </div>
   </div>
 <% end %>
 
