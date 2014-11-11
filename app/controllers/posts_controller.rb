@@ -25,6 +25,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  # def search
+  #   @post = Post.where(':')
+  # end
+
   def edit
     @post = Post.find(params[:id])
     redirect_to posts_path unless session[:current_user] == @post.user_id
